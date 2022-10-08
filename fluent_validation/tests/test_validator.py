@@ -34,5 +34,4 @@ class ValidatorTests(unittest.TestCase):
         return super().setUp()
 
     def test(self) -> None:
-        self.test_class.hello()
-        self.test_class.rule_for(self.test_class.name)
+        print(self.test_class.rule_for(self.test_class.name).is_none())

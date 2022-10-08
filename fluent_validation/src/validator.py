@@ -2,9 +2,17 @@
 Module with the validator class definition.
 """
 
-class Validator():
-    def hello(self):
-        print(type(self))
+from .options import *
 
-    def rule_for(self, item: property):
-        print(isinstance(item, property))
+class Validator():
+    """
+    Base class for outside validators.
+    """
+    def rule_for(self, item):
+        typeof = type(item)
+        if typeof == str:
+            return StringOptions(item)
+        elif typeof == int:
+            return IntOptions()
+        else:
+            return None
