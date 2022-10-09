@@ -11,6 +11,11 @@ class TestClass(Validator):
     """
     _name = ""
 
+    def __init__(self) -> None:
+        super().__init__()
+        self.rule_for("name").is_none()
+        print(self.rule_for("name")._rules)
+
     @property
     def name(self):
         """
@@ -34,4 +39,4 @@ class ValidatorTests(unittest.TestCase):
         return super().setUp()
 
     def test(self) -> None:
-        print(self.test_class.rule_for(self.test_class.name).is_none())
+        ...

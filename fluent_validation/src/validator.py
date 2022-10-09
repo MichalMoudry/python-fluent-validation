@@ -13,6 +13,6 @@ class Validator():
         if typeof == str:
             return StringOptions(item)
         elif typeof == int:
-            return IntOptions()
+            return IntOptions(item)
         else:
             return None
